@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">CodeRed</string>
+
+    <!-- Google Sign-In -->
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
+
+    <!-- Login -->
+    <string name="login_title">Welcome to CodeRed</string>
+    <string name="login_subtitle">Coordinate blood donations, volunteers, and events in one place.</string>
+    <string name="login_google_cta">Continue with Google</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_requests">Open Requests</string>
+    <string name="dashboard_volunteers">Active Volunteers</string>
+    <string name="dashboard_events">Upcoming Events</string>
+    <string name="dashboard_donors">Available Donors</string>
+
+    <!-- Helpline -->
+    <string name="helpline_create_title">Create blood request</string>
+    <string name="helpline_blood_group">Blood group</string>
+    <string name="helpline_city">City</string>
+    <string name="helpline_create_cta">Create request</string>
+
+    <!-- Generic -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+</resources>
