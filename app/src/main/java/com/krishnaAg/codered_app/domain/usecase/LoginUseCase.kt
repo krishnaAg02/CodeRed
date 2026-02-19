@@ -1,5 +1,7 @@
 package com.krishnaAg.codered_app.domain.usecase
 
+import com.krishnaAg.codered_app.domain.repository.UserRepository
+
 class LoginUseCase(
     private val userRepository: UserRepository
 ) {

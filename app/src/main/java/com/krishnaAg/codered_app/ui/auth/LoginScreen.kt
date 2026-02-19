@@ -1,6 +1,5 @@
 package com.krishnaAg.codered_app.ui.auth
 
-import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement

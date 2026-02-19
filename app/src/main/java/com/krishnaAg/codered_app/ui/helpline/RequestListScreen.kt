@@ -1,4 +1,4 @@
-package com.krishnaAg.codered_app.ui.event
+package com.krishnaAg.codered_app.ui.helpline
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,11 +9,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.krishnaAg.codered_app.ui.Components.AppTopBar
 import com.krishnaAg.codered_app.ui.Components.LoadingView
-import com.krishnaAg.codered_app.viewmodel.EventViewModel
+import com.krishnaAg.codered_app.viewmodel.HelplineViewModel
 
 @Composable
-fun EventListScreen(
-    viewModel: EventViewModel,
+fun RequestListScreen(
+    viewModel: HelplineViewModel,
     onBack: (() -> Unit)? = null
 ) {
     val state by viewModel.state.collectAsState()
@@ -21,7 +21,7 @@ fun EventListScreen(
     Scaffold(
         topBar = {
             AppTopBar(
-                title = "Events",
+                title = "Blood Requests",
                 onBack = onBack
             )
         }
@@ -36,8 +36,8 @@ fun EventListScreen(
                     .padding(16.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                items(state.events) { event ->
-                    EventItem(event)
+                items(state.bloodRequests) { request ->
+                    RequestItem(request)
                 }
             }
         }

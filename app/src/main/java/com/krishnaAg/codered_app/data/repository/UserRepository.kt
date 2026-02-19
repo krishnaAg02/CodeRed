@@ -10,19 +10,19 @@ class UserRepositoryImpl(
     private val userDao: UserDao
 ) : UserRepository {
 
-    override suspend fun insertUser(user: User) {
+    override suspend fun insertUser(user: user) {
         userDao.insertUser(user.toEntity())
     }
 
-    override suspend fun getUserById(userId: String): User? {
+    override suspend fun getUserById(userId: String): user? {
         return userDao.getUserById(userId)?.toDomain()
     }
 
-    override suspend fun getAllUsers(): List<User> {
+    override suspend fun getAllUsers(): List<user> {
         return userDao.getAllUsers().map { it.toDomain() }
     }
 
-    override suspend fun deleteUser(user: User) {
+    override suspend fun deleteUser(user: user) {
         userDao.deleteUser(user.toEntity())
     }
 }

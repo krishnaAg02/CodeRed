@@ -14,9 +14,9 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.icons.filled.Bloodtype
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Bloodtype
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.Group
 import androidx.compose.material.icons.filled.VolunteerActivism
@@ -32,6 +32,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -92,17 +93,18 @@ fun DashBoardScreen(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
                 items(
-                    listOf(
+                    items = listOf(
                         Triple("Open Requests", state.openRequests, Icons.Filled.Bloodtype),
                         Triple("Volunteers", state.activeVolunteers, Icons.Filled.Group),
                         Triple("Upcoming Events", state.upcomingEvents, Icons.Filled.Event),
                         Triple("Donors", state.availableDonors, Icons.Filled.VolunteerActivism)
                     )
-                ) { (title, value, icon) ->
+                ) { item ->
+                    val (title, value, icon) = item
                     DashBoardCard(
                         title = title,
-                        value = value,
-                        icon = { Icon(icon, null, Modifier.size(24.dp)) },
+                        value = value.toString(),
+                        icon = { Icon(icon as ImageVector, null, Modifier.size(24.dp)) },
                         modifier = Modifier.fillMaxWidth()
                     )
                 }
